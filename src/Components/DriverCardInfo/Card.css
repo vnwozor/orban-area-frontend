@@ -1,0 +1,97 @@
+.card-div-top-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card-driver-name {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--color-ink);
+}
+
+.card-driver-verify {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-ui);
+    border-radius: var(--radius-sm);
+    padding: 5px 8px;
+    border: 1px solid var(--color-success);
+    background: var(--color-success-bg);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-success);
+    width: fit-content;
+}
+
+.card-eta-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-ui);
+    border-radius: var(--radius-sm);
+    padding: 5px 10px;
+    background: #FFF4DE;
+    border: 1px solid var(--color-amber);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-amber-ink);
+    width: fit-content;
+}
+
+.card-car-name {
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: var(--color-ink-soft);
+    text-align: right;
+}
+
+.card-div-top-section > div:last-child {
+    text-align: right;
+}
+
+.card-pickup {
+    font-size: 12px;
+    color: var(--color-amber-ink);
+    font-weight: 600;
+}
+
+.card-dropoff {
+    font-size: 12px;
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+.card-div-bottom-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--color-line);
+    padding-top: 10px;
+}
+
+.card-div-bottom-section > div:last-child {
+    text-align: right;
+}
+
+.card-fare-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--color-line);
+    margin-top: 2px;
+}
+
+.card-fare-row p:first-child {
+    font-size: 13px;
+    color: var(--color-ink-soft);
+}
+
+.card-fare-amount {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-ink);
+}

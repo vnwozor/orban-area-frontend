@@ -1,0 +1,123 @@
+.nav-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-nav);
+    padding: 0 24px;
+    z-index: 500;
+}
+
+.nav-left-section {
+    display: flex;
+    align-items: center;
+}
+
+.orban-nav-logo {
+    height: 40px;
+}
+
+.nav-types {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.nav-route {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 6px 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.nav-route p {
+    color: var(--color-ink);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    transition: color 0.15s ease;
+}
+
+.nav-route.active,
+.nav-route:hover {
+    border-bottom-color: var(--color-amber);
+}
+
+.car-icon {
+    height: 18px;
+}
+
+.package-icon {
+    height: 22px;
+}
+
+.nav-right-section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-right-section img {
+    height: 22px;
+    display: block;
+}
+
+.nav-icon-link {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.nav-logout-btn {
+    background: none;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-sm);
+    padding: 7px 16px;
+    font-size: 13px;
+    font-family: var(--font-ui);
+    color: var(--color-ink);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-logout-btn:hover {
+    background-color: var(--color-line-soft);
+    border-color: var(--color-ink-soft);
+}
+
+/* Tablets: tighten spacing a touch */
+@media (max-width: 720px) {
+    .nav-main {
+        padding: 0 16px;
+    }
+
+    .nav-types {
+        gap: 20px;
+    }
+}
+
+/* Phones: keep icons, drop the text labels so nothing wraps or overflows */
+@media (max-width: 480px) {
+    .orban-nav-logo {
+        height: 32px;
+    }
+
+    .nav-route p {
+        display: none;
+    }
+
+    .nav-types {
+        gap: 22px;
+    }
+
+    .nav-right-section {
+        gap: 10px;
+    }
+}

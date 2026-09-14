@@ -1,0 +1,38 @@
+/* ---- Orban design tokens ----
+   One place for color, type, radius, and shadow so every screen reads as
+   one product instead of a pile of separately-styled pages. */
+
+:root {
+    /* Brand */
+    --color-ink: #16171C;
+    --color-ink-soft: #4A4B54;
+    --color-canvas: #FBFAF7;
+    --color-surface: #FFFFFF;
+    --color-line: #E5E2D9;
+    --color-line-soft: #F0EEE7;
+
+    --color-amber: #FFB020;      /* Orban's own accent — used sparingly */
+    --color-amber-ink: #7A4E00;  /* text-safe amber, e.g. on light amber bg */
+
+    --color-route-blue: #1A73E8; /* functional — matches the map route line */
+    --color-success: #1F9D55;
+    --color-success-bg: #EAF7EF;
+    --color-danger: #D8483F;
+    --color-danger-bg: #FDECEA;
+
+    /* Type */
+    --font-display: 'Inria Sans', sans-serif;
+    --font-serif: 'Instrument Serif', serif;
+    --font-ui: 'Inder', sans-serif;
+
+    /* Layout */
+    --nav-height: 64px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --shadow-card: 0 4px 18px rgba(22, 23, 28, 0.10);
+    --shadow-nav: 0 2px 10px rgba(22, 23, 28, 0.07);
+    --shadow-pop: 0 10px 28px rgba(22, 23, 28, 0.14);
+
+    --max-content-width: 1100px;
+}

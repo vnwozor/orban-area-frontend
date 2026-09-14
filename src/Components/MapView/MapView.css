@@ -1,0 +1,35 @@
+.live-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1a73e8;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.4);
+    position: relative;
+}
+
+.live-dot-pulse {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(26, 115, 232, 0.3);
+    animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.6); opacity: 0.8; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+.pin-icon {
+    font-size: 26px;
+    line-height: 1;
+}
+
+.car-icon {
+    font-size: 22px;
+    line-height: 1;
+}
