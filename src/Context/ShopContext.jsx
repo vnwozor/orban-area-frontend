@@ -4,7 +4,7 @@ export const ShopContext = createContext()
 
 const API_BASE = import.meta.env.VITE_API_URL
 
-// ---- helper: straight-line distance between two coordinates ----
+
 function getDistanceKm(a, b) {
     if (!a || !b) return 0
     const R = 6371
@@ -18,20 +18,18 @@ function getDistanceKm(a, b) {
     return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x))
 }
 
-// ---- ride tiers (like UberX vs UberXL) — separate from actual drivers ----
+
 const rideTiers = [
     { type: 'economy', name: 'Orban', pricePerKm: 15, image: 'orban_comfort' },
     { type: 'comfort', name: 'Orban Comfort', pricePerKm: 20, image: 'orban_car' },
 ]
 
-// ---- package tiers — same idea, just one option (bike delivery) ----
+
 const packageTiers = [
     { type: 'bike', name: 'Orban Rider', pricePerKm: 10, image: 'orban_bike' },
 ]
 
 export const ShopContextProvider = ({ children }) => {
-    // Persisted to localStorage so logging in survives a page refresh —
-    // before this, currentUser lived only in memory and reset on reload.
     const [currentUser, setCurrentUserState] = useState(() => {
         const saved = localStorage.getItem('currentUser')
         return saved ? JSON.parse(saved) : null
@@ -56,7 +54,7 @@ export const ShopContextProvider = ({ children }) => {
     const [packageOptions, setPackageOptions] = useState([])
     const [selectedPackage, setSelectedPackage] = useState(null)
 
-    // STEP A — user hits "Search": turn pickup/dropoff into priced ride cards
+    
     const searchRides = (pickupLoc, dropoffLoc) => {
         setPickup(pickupLoc)
         setDropoff(dropoffLoc)
@@ -151,7 +149,7 @@ export const ShopContextProvider = ({ children }) => {
         setSelectedPackage(null)
     }
 
-    // customer-initiated cancel — works while pending or accepted
+    
     const cancelRequest = async (requestId) => {
         try {
             const res = await fetch(`${API_BASE}/requests/${requestId}/cancel`, {
