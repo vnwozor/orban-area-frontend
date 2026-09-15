@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react'
 
 export const ShopContext = createContext()
 
-const API_BASE = 'http://localhost:5000/api'
+const API_BASE = import.meta.env.VITE_API_URL
 
 // ---- helper: straight-line distance between two coordinates ----
 function getDistanceKm(a, b) {
@@ -76,8 +76,7 @@ export const ShopContextProvider = ({ children }) => {
         setSelectedRide(option)
     }
 
-    // STEP C — POSTs to the backend and hands back the real saved request
-    // (with its Mongo _id) so the caller can start tracking it.
+    
     const createRequest = async () => {
         if (!selectedRide || !pickup || !dropoff || !currentUser) return null
 
