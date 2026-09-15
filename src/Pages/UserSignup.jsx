@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
 
-const API_BASE = 'http://localhost:5000/api'
+const API_BASE = import.meta.env.VITE_API_URL
 
 const UserSignup = () => {
   const { setCurrentUser } = useContext(ShopContext)

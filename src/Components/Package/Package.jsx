@@ -7,7 +7,7 @@ import { MapView } from '../MapView/Map'
 import { LocationInput } from '../LocationInput/LocationInput'
 import { Card } from '../DriverCardInfo/Card'
 
-const API_BASE = 'http://localhost:5000/api'
+const API_BASE = import.meta.env.VITE_API_URL
 
 // free reverse-geocoding — turns raw GPS coordinates into a readable address
 async function reverseGeocode(lat, lng) {

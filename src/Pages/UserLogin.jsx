@@ -3,7 +3,7 @@ import logo from '../assets/orban logo.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
 
-const API_BASE = 'http://localhost:5000/api'
+const API_BASE = import.meta.env.VITE_API_URL
 
 export const UserLogin = () => {
   const { setCurrentUser } = useContext(ShopContext)
