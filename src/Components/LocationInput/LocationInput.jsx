@@ -3,12 +3,9 @@ import './LocationInput.css'
 
 
 async function searchPlaces(query) {
-
-
-
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
         query
-    )}&countrycodes=ng&viewbox=${viewbox}&bounded=0&limit=5`
+    )}&countrycodes=ng&limit=5`
 
     const res = await fetch(url)
     if (!res.ok) return []
@@ -22,7 +19,7 @@ export const LocationInput = ({ placeholder, iconSrc, onSelect, initialValue }) 
     const [showDropdown, setShowDropdown] = useState(false)
     const debounceRef = useRef(null)
     const userEditedRef = useRef(false)
-    const skipNextSearchRef = useRef(false) 
+    const skipNextSearchRef = useRef(false)
 
 
     useEffect(() => {
@@ -33,10 +30,8 @@ export const LocationInput = ({ placeholder, iconSrc, onSelect, initialValue }) 
     }, [initialValue])
 
 
-
     useEffect(() => {
         if (debounceRef.current) clearTimeout(debounceRef.current)
-
 
         if (skipNextSearchRef.current) {
             skipNextSearchRef.current = false
@@ -49,9 +44,13 @@ export const LocationInput = ({ placeholder, iconSrc, onSelect, initialValue }) 
         }
 
         debounceRef.current = setTimeout(async () => {
-            const results = await searchPlaces(query)
-            setSuggestions(results)
-            setShowDropdown(true)
+            try {
+                const results = await searchPlaces(query)
+                setSuggestions(results)
+                setShowDropdown(true)
+            } catch (err) {
+                console.error('Places search failed:', err)
+            }
         }, 400)
 
         return () => clearTimeout(debounceRef.current)
@@ -59,7 +58,7 @@ export const LocationInput = ({ placeholder, iconSrc, onSelect, initialValue }) 
 
     const handlePick = (place) => {
         userEditedRef.current = true
-        skipNextSearchRef.current = true 
+        skipNextSearchRef.current = true
         setQuery(place.display_name)
         setSuggestions([])
         setShowDropdown(false)
