@@ -79,7 +79,7 @@ export const ShopContextProvider = ({ children }) => {
         if (!selectedRide || !pickup || !dropoff || !currentUser) return null
 
         try {
-            const res = await fetch(`${API_BASE}/requests`, {
+            const res = await fetch(`${API_BASE}/api/requests`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -121,7 +121,7 @@ export const ShopContextProvider = ({ children }) => {
         if (!selectedPackage || !pickup || !dropoff || !currentUser) return null
 
         try {
-            const res = await fetch(`${API_BASE}/requests`, {
+            const res = await fetch(`${API_BASE}/api/requests`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -152,7 +152,7 @@ export const ShopContextProvider = ({ children }) => {
     
     const cancelRequest = async (requestId) => {
         try {
-            const res = await fetch(`${API_BASE}/requests/${requestId}/cancel`, {
+            const res = await fetch(`${API_BASE}/api/requests/${requestId}/cancel`, {
                 method: 'PATCH',
             })
             if (!res.ok) throw new Error('Failed to cancel request')

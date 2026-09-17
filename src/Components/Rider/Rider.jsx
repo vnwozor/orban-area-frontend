@@ -66,7 +66,7 @@ export const Rider = () => {
             return
         }
 
-        fetch(`${API_BASE}/requests/${savedId}`)
+        fetch(`${API_BASE}/api/requests/${savedId}`)
             .then((res) => {
                 if (!res.ok) throw new Error('Saved ride no longer exists')
                 return res.json()
@@ -104,7 +104,7 @@ export const Rider = () => {
 
         const intervalId = setInterval(async () => {
             try {
-                const res = await fetch(`${API_BASE}/requests/${activeRequest._id}`)
+                const res = await fetch(`${API_BASE}/api/requests/${activeRequest._id}`)
                 if (!res.ok) return
                 setActiveRequest(await res.json())
             } catch (err) {
